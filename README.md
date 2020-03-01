@@ -16,7 +16,7 @@ Analyse des paquets : TCP Dump / PostgreSQL
 
 Editeurs : Neovim / Nano
 
-OS : Debian
+OS : Debian 10
 
 Outils de presentation : Powerpoint / Google Slides
 
