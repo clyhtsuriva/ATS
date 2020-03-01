@@ -6,10 +6,15 @@ Notre but est de pouvoir analyser le trafic sortant d'un smartphone à l'aide d'
 Ce projet nous fera utiliser les outils suivants :
 
 Proxy : Squid
+
 Interface web : HTML / CSS / JS / PostgreSQL / Python
+
 Analyse des paquets : TCP Dump / PostgreSQL
 
 Editeurs : Neovim / Nano
+
 OS : Debian
+
 Outils de presentation : Powerpoint / Google Slides
+
 Outils de gestion : Gantt Project / GitHub
