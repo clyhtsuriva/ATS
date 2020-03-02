@@ -3,7 +3,7 @@
 while :
 do
 
-	sudo tcpdump -i eth1 -nn -c1 -A src 192.168.52.19 -w capture.pcap
+	sudo tcpdump -i eth1 -nn -c1 -A src $1 -w capture.pcap
 	sudo tcpdump -r capture.pcap > grostas
 	cat grostas | cut -d" " -f1 >> /tmp/heure.txt
 	cat grostas | cut -d" " -f2 >> /tmp/protocole.txt
