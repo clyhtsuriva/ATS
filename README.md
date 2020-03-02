@@ -1,5 +1,5 @@
 # ATS-Project
-Analyse du trafic d'un smartphone
+Analyse du trafic sortant d'un smartphone
 
 Notre but est de pouvoir analyser le trafic sortant d'un smartphone à l'aide d'un sniffer et d'afficher notre analyse sur une interface web.
 
