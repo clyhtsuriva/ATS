@@ -1,15 +1,13 @@
 # ATS-Project
 Analyse du trafic d'un smartphone
 
-Notre but est de pouvoir analyser le trafic sortant d'un smartphone à l'aide d'un serveur proxy et d'afficher notre analyse sur une interface web.
+Notre but est de pouvoir analyser le trafic sortant d'un smartphone à l'aide d'un sniffer et d'afficher notre analyse sur une interface web.
 
 
 Ce projet nous fera utiliser les outils suivants :
 
 
-Proxy : Squid
-
-Interface web : HTML / CSS / JS / PostgreSQL / Python
+Web : HTML / CSS / JS / PostgreSQL / Python / Apache 2
 
 Analyse des paquets : TCP Dump / PostgreSQL
 
