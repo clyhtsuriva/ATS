@@ -25,8 +25,12 @@ insert into util(login,mdp) values ('root','root');
 insert into util(login,mdp) values ('pico','pico');
 */
 
---drop table if exists aaa cascade;
+drop table if exists trame cascade;
 
---create table aaa(
---	bbb ccc ddd
---);
+create table trame(
+	id_trame serial primary key,
+	heure varchar(100),
+	protocole varchar(100),
+	source varchar(100),
+	destination varchar(100)
+);
