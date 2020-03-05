@@ -7,7 +7,7 @@ def baseHTML(title,body):
         <head>
                 <title>"""+ title +"""</title>
                 <meta charset="UTF-8">
-                <link rel="stylesheet" type="text/css" href="styde.css">
+                <link rel="stylesheet" type="text/css" href="style.css">
         </head>
         <body>"""+ body +"""</body>
 </html>
