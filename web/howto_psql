@@ -1,4 +1,4 @@
-#in order to make thing right, you should check the following comments to visualize and use properly the PSQL database.
+#in order to make things right, you should check the following comments to visualize and use properly the PSQL database.
 
 #assuming that you installed psql prior
 #https://www.postgresql.org/download/linux/debian/
