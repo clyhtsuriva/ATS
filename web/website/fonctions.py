@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+import psycopg2
 
 def baseHTML(title,body):
     content=("""<!DOCTYPE html>
@@ -14,3 +15,9 @@ def baseHTML(title,body):
 
             """)
     return content
+
+
+def connexionBD():
+    connexion=psycopg2.connect ("host='localhost' dbname='atsdb' user='atsuser' password='123456'")
+    return connexion
+
