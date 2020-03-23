@@ -20,9 +20,20 @@ def index(req):
 #sql part
 
     for i in data :
-        content+=("""<ul><li>""" + str(i[1]) + str(i[2]) + str(i[3]) + str(i[4]) + """</li></ul>""")
+        content+=("""<tr>""" + 
+"""<td>""" + str(i[1]) + """</td>""" +
+"""<td>""" + str(i[2]) + """</td>""" +
+"""<td>""" + str(i[3]) + """</td>""" +
+"""<td>""" + str(i[4]) + """</td>""" +
+"""</tr>""")
     
     req.write(baseHTML("ATS-Project","""
-<center><h1>ATS-Project</h1></center>"""
-+ content))
+<center><h1>ATS-Project</h1></center>
+<table>
+<tr><th>Heure</th><th>Protocole</th><th>Source</th><th>Destination</th></tr>
+"""
++ content + 
+"""
+</table>
+"""))
 
