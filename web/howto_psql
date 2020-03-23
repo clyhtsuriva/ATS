@@ -32,4 +32,4 @@ su - atsuser
 psql -d atsdb -U atsuser
 
 #initialize the tables
-\i /WHATEVER_PATH_YOUR_INIT_IS_IN/init-bd.sql
+\i /WHATEVER_PATH_YOUR_INIT_IS_IN/ATS-Project/website/init-bd.sql
