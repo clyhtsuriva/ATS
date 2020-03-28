@@ -9,7 +9,7 @@ Ce projet nous fera utiliser les outils suivants :
 
 Web : HTML / CSS / JS / PostgreSQL / Python / Apache 2
 
-Analyse des paquets : TCP Dump / PostgreSQL
+Analyse des paquets : TCP Dump / PostgreSQL / Shell
 
 Automatisation du déploiement : Shell
 
