@@ -1,4 +1,6 @@
 #!/bin/bash
+#cloner dans le repertoire personnel du root
+#exucuter en tant que root
 
 cp /root/ATS-Project/web/website/init-bd.sql /tmp/table.sql #Car problème de droit root
 
@@ -14,4 +16,6 @@ echo "CREATE USER atsuser WITH PASSWORD '123456'; CREATE DATABASE atsdb; GRANT A
 
 su - postgres -c "psql -f /tmp/conf"
 
-su - atsuser -c "psql -d atsdb -U atsuser -f /tmp/table.sql"
+
+pushd /tmp ; su atsuser -c "psql -d atsdb -U atsuser -f /tmp/table.sql" ; popd
+
