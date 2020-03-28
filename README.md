@@ -11,7 +11,7 @@ Web : HTML / CSS / JS / PostgreSQL / Python / Apache 2
 
 Analyse des paquets : TCP Dump / PostgreSQL
 
-Automatisation du déploiement : Bash
+Automatisation du déploiement : Shell
 
 Editeurs : Neovim / Nano
 
