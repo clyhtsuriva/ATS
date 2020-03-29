@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "restricted area"
-AuthUserFile /var/www/html/ATS-Project/web/.htpasswd
-require valid-user
