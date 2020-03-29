@@ -35,5 +35,5 @@ def index(req):
 + content + 
 """
 </table>
-"""))
+""")) #tableheads to change so it takes the output of the select
 
