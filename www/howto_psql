@@ -1,0 +1,35 @@
+#in order to make things right, you should check the following comments to visualize and use properly the PSQL database.
+
+#assuming that you installed psql prior
+#https://www.postgresql.org/download/linux/debian/
+
+#create the user
+adduser atsuser
+#use the password '123456'
+
+#connect as postgres
+su - postgres
+
+#launch the psql terminal
+psql
+
+#create the user that we use in our scripts
+CREATE USER atsuser WITH PASSWORD '123456';
+
+#create our databse
+CREATE DATABASE atsdb;
+
+#grant the privileges to our user
+GRANT ALL PRIVILEGES ON DATABASE atsdb to atsuser;
+
+#quit
+Ctrl+D
+
+#log in as atsuser
+su - atsuser
+
+#launch psql with our user and our database
+psql -d atsdb -U atsuser
+
+#initialize the tables
+\i /WHATEVER_PATH_YOUR_INIT_IS_IN/ATS-Project/website/init-bd.sql

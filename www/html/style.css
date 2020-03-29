@@ -1,0 +1,12 @@
+body {
+	background-color:#000000;
+}
+
+*{
+	color: white;
+}
+
+table,th,td {
+	border: 2px solid red;
+	text-align: center;
+}
