@@ -1,4 +1,5 @@
 AuthType Basic
 AuthName "restricted area"
-AuthUserFile /var/www/html/ATS-Project/web/.htpasswd
+AuthUserFile /var/www/.htpasswd
 require valid-user
+DirectoryIndex index.py

@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#TO-DO:
+#prend en compte l'interface internet par defaut sur la machine
+#recupere l'adresse IP lie a cette interface
+#installe tcpdump avant toute chose
+#corrige le deplacement du cut dans certaines trames (comme ARP)
+#Affiche quelque chose d'autre que "IP" en protocole (probleme pour la plupart des paquets
+#enleve ce qu'il y a apres la virgule pour les secondes
+#ajoute la date
+#insert dans la bdd les differentes infos
+
 while :
 do
 

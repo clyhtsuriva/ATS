@@ -1,0 +1,13 @@
+#pour felix
+
+#first, you have to install apache2 (server), mod_python (to build html via python) and python-psycopg2 (to use psql) :
+apt install apache2 libapache2-mod-python python-psycopg2
+
+#replace the actual /var/www by our ATS-Project/www
+cp -r /root/ATS-Project/www /var/
+
+#give the x rights on the .py files
+chmod +x /var/www/html *.py
+
+#replace the actual /etc/apache2/apache2.conf by our ATS-Project/www/apache-modified/apache2.conf
+cp -r ...
