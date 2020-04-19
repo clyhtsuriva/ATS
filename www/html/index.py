@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import mod_python
+from mod_python import Session 
 from fonctions import baseHTML, connexionBD, lien
 
 def index(req):
     req.content_type="text/html"
     
+    sess=Session.Session(req)
+    sess.save()
+
     content=str()
 
 #sql part    
