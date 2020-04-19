@@ -1,12 +1,12 @@
 --Creation of the main table
-drop table if exists trame cascade;
+drop table if exists paquet cascade;
 
-create table trame(
-	id_trame serial primary key,
-	heure varchar(100),
-	protocole varchar(100),
-	source varchar(100),
-	destination varchar(100)
+create table paquet(
+	id_paquet SERIAL PRIMARY KEY,
+	heure TIME(0) NOT NULL,
+	protocole VARCHAR(100) NOT NULL,
+	source VARCHAR(100) NOT NULL,
+	destination VARCHAR(100) NOT NULL
 );
 
 
