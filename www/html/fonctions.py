@@ -21,3 +21,6 @@ def connexionBD():
     connexion=psycopg2.connect ("host='localhost' dbname='atsdb' user='atsuser' password='123456'")
     return connexion
 
+def lien(url,text):
+    content=("""<a href=" """ + url + """ ">""" + texte + """</a>""")
+    return content
