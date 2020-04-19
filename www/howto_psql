@@ -33,3 +33,6 @@ psql -d atsdb -U atsuser
 
 #initialize the tables
 \i /WHATEVER_PATH_YOUR_INIT_IS_IN/ATS-Project/website/init-bd.sql
+
+#quick insert
+insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ('10:30:30.60','ICMP','192.168.0.1','1.1.1.1',10000,1);

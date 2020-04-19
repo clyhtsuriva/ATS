@@ -12,28 +12,31 @@ def index(req):
 #sql part    
     conn=connexionBD()
     cur=conn.cursor()
-    sql="select * from trame;"
+    sql="select * from paquet;"
     cur.execute(sql)
     conn.commit()
     data=cur.fetchall()
     conn.close()
 #sql part
 
+#takes every lines from the select
     for i in data :
-        content+=("""<tr>""" + 
+        content+=("""<tr>""" +
 """<td>""" + str(i[1]) + """</td>""" +
 """<td>""" + str(i[2]) + """</td>""" +
 """<td>""" + str(i[3]) + """</td>""" +
 """<td>""" + str(i[4]) + """</td>""" +
+"""<td>""" + str(i[5]) + """</td>""" +
+"""<td>""" + str(i[6]) + """</td>""" +
 """</tr>""")
     
+#write the html page
     req.write(baseHTML("ATS-Project","""
 <center><h1>ATS-Project</h1></center>
-<table>
-<tr><th>Heure</th><th>Protocole</th><th>Source</th><th>Destination</th></tr>
+<center><table>
+<tr><th>Heure</th><th>Protocole</th><th>IP Source</th><th>IP Destination</th><th>Port Source</th><th>Port Destination</th></tr>
 """
 + content + 
 """
-</table>
-""")) #tableheads to change so it takes the output of the select
-
+</table></center>
+"""))
