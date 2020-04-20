@@ -2,8 +2,25 @@ body {
 	background-color:#000000;
 }
 
-*{
-	color: white;
+p,i,table,form {
+	color:yellow;
+}
+
+b {
+	color : #e600e6;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color:  #6666ff 
+}
+
+a {
+	color: #00ff00;
+	text-decoration: none;
+}
+
+ a:hover {
+	 color: red;
 }
 
 table,th,td {
