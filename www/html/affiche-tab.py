@@ -1,25 +1,24 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-import mod_python
+import mod_python                     
 from fonctions import baseHTML, connexionBD, lien
 
 def index(req):
     req.content_type="text/html"
     content=str()
 
-#sql part    
+    condition=req.form["condition"]
+    
     conn=connexionBD()
     cur=conn.cursor()
-    sql="select * from paquet;"
+    sql="select * from paquet where {}".format(condition)
     cur.execute(sql)
     conn.commit()
     data=cur.fetchall()
     conn.close()
-#sql part
 
-#takes every lines from the select
-    for i in data :
+    for i in data:
         content+=("""<tr>""" +
 """<td>""" + str(i[1]) + """</td>""" +
 """<td>""" + str(i[2]) + """</td>""" +
@@ -28,19 +27,13 @@ def index(req):
 """<td>""" + str(i[5]) + """</td>""" +
 """<td>""" + str(i[6]) + """</td>""" +
 """</tr>""")
-    
-#write the html page
-    req.write(baseHTML("ATS-Project","""
-<center><h1>ATS-Project</h1></center>
-<b>Filtrage</b>
-<input type="text" id="condition" onkeyup="cherche()">
-<div id="tab">
+
+    req.write("""
 <center><table>
 <tr><th>Heure</th><th>Protocole</th><th>IP Source</th><th>IP Destination</th><th>Port Source</th><th>Port Destination</th></tr>
 """
 + content + 
 """
 </table></center>
-</div>
-<script src="filtre.js"></script>
 """))
+
