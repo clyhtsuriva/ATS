@@ -34,6 +34,4 @@ def index(req):
 """
 + content + 
 """
-</table></center>
-"""))
-
+</table></center>""")

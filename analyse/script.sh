@@ -4,10 +4,8 @@
 #TO-DO:
 #prend en compte l'interface internet par defaut sur la machine
 #recupere l'adresse IP lie a cette interface
-#installe tcpdump avant toute chose
 #corrige le deplacement du cut dans certaines trames (comme ARP)
 #Affiche quelque chose d'autre que "IP" en protocole (probleme pour la plupart des paquets
-#enleve ce qu'il y a apres la virgule pour les secondes
 #ajoute la date
 #insert dans la bdd les differentes infos
 
@@ -29,7 +27,7 @@
 while :
 do
 
-	sudo tcpdump -i wlp2s0 -c1 -nn tcp -w capturetcp.pcap
+	sudo tcpdump -i $1 -c1 -nn tcp -w capturetcp.pcap
 	sudo tcpdump -nn -r capturetcp.pcap > grostastcp
 	echo -e "Voici un paquet TCP\n"
 	cat grostastcp | cut -d" " -f1 >> /tmp/heuretcp.txt
@@ -45,7 +43,7 @@ do
 
 # Attention ici c'est UDP
 
-	sudo tcpdump -i wlp2s0 -c1 -nn udp -w captureudp.pcap
+	sudo tcpdump -i $1 -c1 -nn udp -w captureudp.pcap
 	sudo tcpdump -nn -r captureudp.pcap > grostasudp
 	echo -e "Voici un paquet UDP\n" 
 	cat grostasudp | cut -d" " -f1 >> /tmp/heureudp.txt

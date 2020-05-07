@@ -32,7 +32,7 @@ def index(req):
 #write the html page
     req.write(baseHTML("ATS-Project","""
 <center><h1>ATS-Project</h1></center>
-<b>Filtrage</b>
+<b>Filtre</b>
 <input type="text" id="condition" onkeyup="cherche()">
 <div id="tab">
 <center><table>
