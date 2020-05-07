@@ -12,7 +12,7 @@ def baseHTML(title,body):
         </head>
         <body>
             <nav>
-                <a href="/index.py/">Index</a> |
+                <a href="/">Index</a> |
                 <a href="/fitre.py/">Filtre</a>
         """+ body +"""</body>
 </html>
