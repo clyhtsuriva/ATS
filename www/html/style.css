@@ -19,11 +19,21 @@ a {
 	text-decoration: none;
 }
 
- a:hover {
+a:hover {
 	 color: red;
 }
 
 table,th,td {
 	border: 2px solid red;
 	text-align: center;
+}
+
+#tip {
+	color: #6666ff;
+	position: fixed;
+	bottom: 10px;
+	right: 50px;
+	border: solid #6666ff;
+	padding:10px;
+	background-color: black;
 }
