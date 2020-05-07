@@ -33,7 +33,7 @@ def index(req):
     req.write(baseHTML("ATS-Project","""
 <center><h1>ATS-Project</h1></center>
 <div id="tip" style="display:block;">
-Pour voir le nombre de paquets en destination d'une adresse IP, cliquez sur cette derniere dans le tableau.<div id="ok" onclick="toggle_div(this,'tip');"><b>OK</b></div></div>
+Pour voir le nombre de paquets en destination d'une adresse IP, cliquez sur cette dernière dans le tableau.<div id="ok" onclick="toggle_div(this,'tip');"><b>OK</b></div></div>
 <b>Filtre</b>
 <input type="text" id="condition" onkeyup="cherche()">
 <div id="tab">
