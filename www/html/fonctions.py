@@ -10,7 +10,11 @@ def baseHTML(title,body):
                 <meta charset="UTF-8">
                 <link rel="stylesheet" type="text/css" href="style.css">
         </head>
-        <body>"""+ body +"""</body>
+        <body>
+            <nav>
+                <a href="/index.py/">Index</a> |
+                <a href="/fitre.py/">Filtre</a>
+        """+ body +"""</body>
 </html>
 
             """)
