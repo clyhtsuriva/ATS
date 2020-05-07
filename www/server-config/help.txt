@@ -9,5 +9,5 @@ cp -r /root/ATS-Project/www /var/
 #give the x rights on the .py files
 chmod +x /var/www/html *.py
 
-#replace the actual /etc/apache2/apache2.conf by our ATS-Project/www/apache-modified/apache2.conf
+#replace the apache2 and ssl folders
 cp -r ...
