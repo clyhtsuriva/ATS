@@ -15,6 +15,7 @@ def baseHTML(title,body):
                 <a href="/">Index</a>
                 <a href="/filtrage.py">Filtrage</a>
                 <a href="/syntaxe.py">Syntaxe</a>
+                <a href="/analyse.py">Analyse</a>
             </nav>
         """+ body +"""</body>
 </html>
