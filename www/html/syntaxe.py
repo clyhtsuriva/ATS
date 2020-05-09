@@ -10,8 +10,8 @@ def index(req):
 
 #write the html page
     req.write(baseHTML("ATS-Project","""
-<center><h1>Syntaxe</h1></center>
-<p>La """+lien('syntaxe.py','syntaxe')+""" pour utiliser les filtres disponibles sur l'"""+lien('index.py','index')+""" et """+lien('filtrage.py','filtrage')+""" est la suivante :</p>
+<h1>Syntaxe</h1>
+<p>La """+lien('syntaxe.py','syntaxe')+""" pour utiliser les filtres disponibles sur la page """+lien('filtrage.py','filtrage')+""" est la suivante :</p>
 <p>&lt;colonne&gt;='&lt;valeur&gt;'</p><br/>
 <table>
 <tr><th>colonne</th><th>valeur</th><th>exemple</th></tr>

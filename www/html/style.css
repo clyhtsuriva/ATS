@@ -3,28 +3,29 @@ body {
 }
 
 p,i,table,form {
-	color:yellow;
+	color:#ffffff;
 }
 
 b {
-	color : #e600e6;
+	color : #D42471;
 }
 
-h1,h2,h3,h4,h5,h6 {
-	color:  #6666ff 
+h1 {
+	color:  #6666ff;
+	text-align: center
 }
 
 a {
-	color: #00ff00;
+	color: #00ffff;
 	text-decoration: none;
 }
 
 a:hover {
-	 color: red;
+	 color: #D42471;
 }
 
 table,th,td {
-	border: 2px solid red;
+	border: 2px solid #D42471;
 	text-align: center;
 }
 
@@ -36,4 +37,13 @@ table,th,td {
 	border: solid #6666ff;
 	padding:10px;
 	background-color: black;
+}
+
+.data_tab {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+em{
+	color:#FF00FF;
 }

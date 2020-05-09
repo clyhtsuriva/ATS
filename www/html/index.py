@@ -11,10 +11,19 @@ def index(req):
 #sql part    
     conn=connexionBD()
     cur=conn.cursor()
-    sql="select * from paquet;"
+
+    sql="SELECT * FROM paquet ORDER BY heure DESC LIMIT 20;"
+    sql_count="SELECT COUNT(*) FROM paquet;"
+
     cur.execute(sql)
     conn.commit()
     data=cur.fetchall()
+
+    cur.execute(sql_count)
+    conn.commit()
+    count=cur.fetchone()
+    count=str(count[0])
+
     conn.close()
 #sql part
 
@@ -31,24 +40,19 @@ def index(req):
     
 #write the html page
     req.write(baseHTML("ATS-Project","""
-<center><h1>ATS-Project</h1></center>
+<h1>ATS-Project</h1>
 <div id="tip" style="display:block;">
 Pour voir le nombre de paquets en destination d'une adresse IP, cliquez sur cette dernière dans le tableau.<div id="ok" onclick="toggle_div(this,'tip');"><b>OK</b></div></div>
-<b>Filtre</b>
-<input type="text" id="condition" onkeyup="cherche()">
+<p>Nombre totale de paquets : <b>"""+ count +"""</b></p>
+<em><div id="ici" onclick="affiche_tas()">Pour afficher toute la table, cliquez sur ce texte.</div></em><br/>
 <div id="tab">
-<center><table>
+<table class="data_tab">
 <tr><th>Heure</th><th>Protocole</th><th>IP Source</th><th>IP Destination</th><th>Port Source</th><th>Port Destination</th></tr>
 """
 + content + 
 """
-</table></center>
+</table>
 </div>
-<script src="filtre.js"></script>
-<script>
-function toggle_div(bouton, id) { 
-  var div = document.getElementById(id);
-  div.style.display = "none"; 
-}
-</script>
+<script src="tip.js"></script>
+<script src="tas.js"></script>
 """))

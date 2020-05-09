@@ -7,15 +7,16 @@ from fonctions import baseHTML, connexionBD, lien
 def index(req):
     req.content_type="text/html"
     content=str()
-
-    condition=req.form["condition"]
     
     conn=connexionBD()
     cur=conn.cursor()
-    sql="select * from paquet where {} ORDER BY heure DESC;".format(condition)
+
+    sql="SELECT * FROM paquet ORDER BY heure DESC;"
+
     cur.execute(sql)
     conn.commit()
     data=cur.fetchall()
+
     conn.close()
 
     for i in data:

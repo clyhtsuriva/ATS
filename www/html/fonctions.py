@@ -4,7 +4,7 @@ import psycopg2
 
 def baseHTML(title,body):
     content=("""<!DOCTYPE html>
-<html>
+<html lang="fr">
         <head>
                 <title>"""+ title +"""</title>
                 <meta charset="UTF-8">
