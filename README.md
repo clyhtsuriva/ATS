@@ -57,7 +57,7 @@ Installez, configurez et lancez la base de données :
 root@Debian:~# ./ATS-Project/automatisation/BDDAuto.sh
 ```
 
-Installez, configurez et lancer le serveur web :
+Installez, configurez et lancez le serveur web :
 ```Shell
 root@Debian:~# ./ATS-Project/automatisation/apacheAuto.sh
 ```
@@ -68,3 +68,9 @@ root@Debian:~# ./ATS-Project/automatisation/
 ```
 
 ## Utilisation
+
+A ce point, tout est censé être configuré pour une utilisation optimale.
+Vous pouvez maintenant vous connecter sur l'interface web pour voir ce que le sniffer a déjà capté.
+Cela est faisable via n'importe quel navigateur web et en tapant **localhost**
+
+La syntaxe pour utiliser le filtre est donnée sur la page **syntaxe**
