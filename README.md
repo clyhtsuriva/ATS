@@ -26,7 +26,12 @@ Outils de gestion : Gantt Project / GitHub
 
 ## Installation
 Nos scripts fonctionnent avec le strict nécessaire. Tous nos tests ont pu se faire sur des machines Debian 10 vierges.
-Nous vous conseillons d'effectuer toutes les prochaines actions en tant que **root** et dans le répertoire ```/root```
+Ce projet pourrais fonctionner sur d'autres distro mais nous ne le garantissons pas.
+
+Nous vous conseillons d'effectuer toutes les prochaines actions en tant que **root** et dans le répertoire ```/root``` :
+```Shell
+user@Debian:~$ sudo su -
+```
 
 Mettez à jour la liste des paquets :
 ```Shell
@@ -47,6 +52,19 @@ Clonez-le ce dépôt :
 root@Debian:~# git clone https://github.com/clyhtsuriva/ATS-Project
 ```
 
+Installez, configurez et lancez la base de données :
+```Shell
+root@Debian:~# ./ATS-Project/automatisation/BDDAuto.sh
+```
 
+Installez, configurez et lancer le serveur web :
+```Shell
+root@Debian:~# ./ATS-Project/automatisation/apacheAuto.sh
+```
+
+Installez, configurez et lancer le sniffer :
+```Shell
+root@Debian:~# ./ATS-Project/automatisation/
+```
 
 ## Utilisation
