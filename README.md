@@ -25,7 +25,7 @@ Outils de présentation : PowerPoint / Google Slides
 Outils de gestion : Gantt Project / GitHub
 
 ## Installation
-Nos scripts fonctionnent avec le strict nécessaire. Tous nos tests ont pu se faire sur des machines Debian 10 vierges.
+Tous nos tests ont pu se faire sur des machines Debian 10 vierges.
 Ce projet pourrait fonctionner sur d'autres distro, mais nous ne le garantissons pas.
 
 Nous vous conseillons d'effectuer toutes les prochaines actions en tant que **root** et dans le répertoire ```/root``` :
