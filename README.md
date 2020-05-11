@@ -1,6 +1,6 @@
 # ATS-Project
 
-# Introduction
+## Introduction
 
 Analyse du trafic sortant d'un smartphone
 
@@ -24,6 +24,29 @@ Outils de présentation : PowerPoint / Google Slides
 
 Outils de gestion : Gantt Project / GitHub
 
-# Installation
+## Installation
+Nos scripts fonctionnent avec le strict nécessaire. Tous nos tests ont pu se faire sur des machines Debian 10 vierges.
+Nous vous conseillons d'effectuer toutes les prochaines actions en tant que **root** et dans le répertoire ```/root```
 
-# Utilisation
+Mettez à jour la liste des paquets :
+```Shell
+root@Debian:~# apt update
+```
+Mettez à jour les paquets installés sur le système :
+```Shell
+root@Debian:~# apt upgrade
+```
+
+Installez git, si ce n'est pas déjà fait :
+```Shell
+root@Debian:~# apt install git
+```
+
+Clonez-le ce dépôt :
+```Shell
+root@Debian:~# git clone https://github.com/clyhtsuriva/ATS-Project
+```
+
+
+
+## Utilisation
