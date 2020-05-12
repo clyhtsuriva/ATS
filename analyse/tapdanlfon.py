@@ -4,11 +4,6 @@
 
 import psycopg2
 
-
-def connexionBD():
-	connexion=psycopg2.connect ("host='localhost' dbname='atsdb' user='atsuser' password='123456'")
-	return connexion
-
 # read a text file as a list of lines
 # find the last line, change to a file you have
 LireHeureTCP = open ( '/tmp/heuretcp.txt',"r" )
@@ -63,6 +58,7 @@ LireIPDSTUDP.close()
 DerniereLignePortDSTUDP = LirePortDSTUDP.readlines()
 LirePortDSTUDP.close()
 
+
 #print "Heure TCP:"
 a = DerniereLigneHeureTCP[-1]
 
@@ -102,19 +98,26 @@ v = DerniereLigneIPDSTUDP[-1]
 #print "Port Destination UDP:"
 u = DerniereLignePortDSTUDP[-1]
 
+
 print a,b,c
+
+
+def connexionBD():
+	connexion=psycopg2.connect ("host='localhost' dbname='atsdb' user='atsuser' password='123456'")
+	return connexion
+
 #sql part
 
-conn=connexionBD()
-cur=conn.cursor()
+	conn=connexionBD()
+	cur=conn.cursor()
 	
-sql="""insert into 	paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values (a,b,c,e,d,f);
+	sql="""insert into 	paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values (a,b,c,e,d,f);
 
 insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values (z,y,x,v,w,u);
 """
 
-cur.execute(sql)
-conn.commit()
-data=cur.fetchall()
+	cur.execute(sql)
+	conn.commit()
+	data=cur.fetchall()
 
-conn.close()
+	conn.close()
