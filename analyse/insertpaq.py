@@ -111,13 +111,11 @@ def connexionBD():
 	conn=connexionBD()
 	cur=conn.cursor()
 	
-	sql="""insert into 	paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values (a,b,c,e,d,f);
-
-insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values (z,y,x,v,w,u);
-"""
+	sql="""insert into 	paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ({},{},{},{},{},{});
+insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ({},{},{},{},{},{});
+""".format(a,b,c,e,d,f,z,y,x,v,w,u)
 
 	cur.execute(sql)
 	conn.commit()
-	data=cur.fetchall()
 
 	conn.close()
