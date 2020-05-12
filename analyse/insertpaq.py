@@ -60,43 +60,43 @@ LirePortDSTUDP.close()
 
 
 #print "Heure TCP:"
-a = DerniereLigneHeureTCP[-1]
+a = str(DerniereLigneHeureTCP[-1])
 
 #print "Protocole TCP:"
-b = DerniereLigneProtocoleTCP[-1]
+b = str(DerniereLigneProtocoleTCP[-1])
 
 #print "IP Source TCP:"
-c = DerniereLigneIPSRCTCP[-1]
+c = str(DerniereLigneIPSRCTCP[-1])
 
 #print "Port Source TCP:"
-d = DerniereLignePortSRCTCP[-1]
+d = str(DerniereLignePortSRCTCP[-1])
 
 #print "IP Destination TCP:"
-e = DerniereLigneIPDSTTCP[-1]
+e = str(DerniereLigneIPDSTTCP[-1])
 
 #print "Port Destination TCP:"
-f = DerniereLignePortDSTTCP[-1]
+f = str(DerniereLignePortDSTTCP[-1])
 
 
 #Re coucou
 
 #print "Heure UDP:"
-z = DerniereLigneHeureUDP[-1]
+z = str(DerniereLigneHeureUDP[-1])
 
 #print "Protocole UDP:"
-y = DerniereLigneProtocoleUDP[-1]
+y = str(DerniereLigneProtocoleUDP[-1])
 
 #print "IP Source UDP:"
-x = DerniereLigneIPSRCUDP[-1]
+x = str(DerniereLigneIPSRCUDP[-1])
 
 #print "Port Source UDP:"
-w = DerniereLignePortSRCUDP[-1]
+w = str(DerniereLignePortSRCUDP[-1])
 
 #print "IP Destination UDP:"
-v = DerniereLigneIPDSTUDP[-1]
+v = str(DerniereLigneIPDSTUDP[-1])
 
 #print "Port Destination UDP:"
-u = DerniereLignePortDSTUDP[-1]
+u = str(DerniereLignePortDSTUDP[-1])
 
 
 print a,b,c
@@ -106,16 +106,15 @@ def connexionBD():
 	connexion=psycopg2.connect ("host='localhost' dbname='atsdb' user='atsuser' password='123456'")
 	return connexion
 
-#sql part
-
-	conn=connexionBD()
-	cur=conn.cursor()
+conn=connexionBD()
+cur=conn.cursor()
 	
-	sql="""insert into 	paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ({},{},{},{},{},{});
-insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ({},{},{},{},{},{});
+sql="""
+insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ('{}','{}','{}','{}','{}','{}');
+insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ('{}','{}','{}','{}','{}','{}');
 """.format(a,b,c,e,d,f,z,y,x,v,w,u)
 
-	cur.execute(sql)
-	conn.commit()
+cur.execute(sql)
+conn.commit()
 
-	conn.close()
+conn.close()
