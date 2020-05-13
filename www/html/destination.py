@@ -52,7 +52,7 @@ def index(req):
 """</tr>""")
     
 #write the html page
-    req.write(baseHTML("Destination","""
+    req.write(baseHTML(ip,"""
 <h1>IP Destination : """ + ip + """</h1>
 <p>Nombre de paquets en destination de """+ ip + """ : <b>"""+ str(count[0])+ """</b></p>
 <table class="data_tab">

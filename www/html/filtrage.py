@@ -9,7 +9,7 @@ def index(req):
     content=str()
 
 #write the html page
-    req.write(baseHTML("ATS-Project","""
+    req.write(baseHTML("Filtrage","""
 <h1>Filtrage</h1>
 <div id="tip" style="display:block;">
 Pour voir le nombre de paquets en destination d'une adresse IP, cliquez sur cette dernière dans le tableau.<div id="ok" onclick="toggle_div(this,'tip');"><b>OK</b></div></div>
