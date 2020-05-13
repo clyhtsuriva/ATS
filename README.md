@@ -71,6 +71,11 @@ root@Debian:~# ./ATS-Project/automatisation/
 
 A ce point, tout est censé être configuré pour une utilisation optimale.
 Vous pouvez maintenant vous connecter sur l'interface web pour voir ce que le sniffer a déjà capté.
-Cela est faisable via n'importe quel navigateur web et en tapant **localhost**
+Cela est faisable via n'importe quel navigateur web et en tapant **localhost**.
 
-La syntaxe pour utiliser le filtre est donnée sur la page **syntaxe**
+Le nom d'utilisateur et le mot de passe sont **admin** par défaut. Vous pouvez biensur changez cela en modifiant le fichier concerné :
+```Shell
+root@Debian:~# editor /var/www/.htpasswd
+```
+
+La syntaxe pour utiliser le filtre est donnée sur la page **syntaxe**.
