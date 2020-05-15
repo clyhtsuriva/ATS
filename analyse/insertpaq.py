@@ -109,12 +109,17 @@ def connexionBD():
 conn=connexionBD()
 cur=conn.cursor()
 	
-sql="""
-insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ('{}','{}','{}','{}','{}','{}');
-insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ('{}','{}','{}','{}','{}','{}');
-""".format(a,b,c,e,d,f,z,y,x,v,w,u)
+#sql="""
+#insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ('{}','{}','{}','{}','{}','{}');
+#insert into paquet(heure,protocole,ip_source,ip_destination,port_source,port_destination) values ('{}','{}','{}','{}','{}','{}');
+#""".format(a,b,c,e,d,f,z,y,x,v,w,u)
 
-cur.execute(sql)
+cur.execute("INSERT INTO paquet (heure,protocole,ip_source,ip_destination,port_source,port_destination) VALUES (%s, %s, %s, %s, %s, %s)",
+        (a, b, c, e, d, f))
+cur.execute("INSERT INTO paquet (heure,protocole,ip_source,ip_destination,port_source,port_destination) VALUES (%s, %s, %s, %s, %s, %s)",
+        (z, y, x, v, w, u))
+
+#cur.execute(sql)
+
 conn.commit()
-
 conn.close()
