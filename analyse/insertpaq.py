@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # coding: utf-8
 
-
 import psycopg2
+
 
 # read a text file as a list of lines
 # find the last line, change to a file you have
@@ -20,42 +20,43 @@ LirePortSRCUDP = open ( '/tmp/portsrcudp.txt',"r" )
 LireIPDSTUDP = open ( '/tmp/ipdstudp.txt',"r" )
 LirePortDSTUDP = open ( '/tmp/portdstudp.txt',"r" )
 
-DerniereLigneHeureTCP = LireHeureTCP.readlines()
+
+DerniereLigneHeureTCP = LireHeureTCP.read().splitlines()
 LireHeureTCP.close()
 
-DerniereLigneProtocoleTCP = LireProtocoleTCP.readlines()
+DerniereLigneProtocoleTCP = LireProtocoleTCP.read().splitlines()
 LireProtocoleTCP.close()
 
-DerniereLigneIPSRCTCP = LireIPSRCTCP.readlines()
+DerniereLigneIPSRCTCP = LireIPSRCTCP.read().splitlines()
 LireIPSRCTCP.close()
 
-DerniereLignePortSRCTCP = LirePortSRCTCP.readlines()
+DerniereLignePortSRCTCP = LirePortSRCTCP.read().splitlines()
 LirePortSRCTCP.close()
 
-DerniereLigneIPDSTTCP = LireIPDSTTCP.readlines()
+DerniereLigneIPDSTTCP = LireIPDSTTCP.read().splitlines()
 LireIPDSTTCP.close()
 
-DerniereLignePortDSTTCP = LirePortDSTTCP.readlines()
+DerniereLignePortDSTTCP = LirePortDSTTCP.read().splitlines()
 LirePortDSTTCP.close()
 
 #Coucou
 
-DerniereLigneHeureUDP = LireHeureUDP.readlines()
+DerniereLigneHeureUDP = LireHeureUDP.read().splitlines()
 LireHeureUDP.close()
 
-DerniereLigneProtocoleUDP = LireProtocoleUDP.readlines()
+DerniereLigneProtocoleUDP = LireProtocoleUDP.read().splitlines()
 LireProtocoleUDP.close()
 
-DerniereLigneIPSRCUDP = LireIPSRCUDP.readlines()
+DerniereLigneIPSRCUDP = LireIPSRCUDP.read().splitlines()
 LireIPSRCUDP.close()
 
-DerniereLignePortSRCUDP = LirePortSRCUDP.readlines()
+DerniereLignePortSRCUDP = LirePortSRCUDP.read().splitlines()
 LirePortSRCUDP.close()
 
-DerniereLigneIPDSTUDP = LireIPDSTUDP.readlines()
+DerniereLigneIPDSTUDP = LireIPDSTUDP.read().splitlines()
 LireIPDSTUDP.close()
 
-DerniereLignePortDSTUDP = LirePortDSTUDP.readlines()
+DerniereLignePortDSTUDP = LirePortDSTUDP.read().splitlines()
 LirePortDSTUDP.close()
 
 
@@ -97,9 +98,6 @@ v = str(DerniereLigneIPDSTUDP[-1])
 
 #print "Port Destination UDP:"
 u = str(DerniereLignePortDSTUDP[-1])
-
-
-print a,b,c
 
 
 def connexionBD():
