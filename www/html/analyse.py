@@ -37,12 +37,20 @@ def index(req):
 
 #write the html page
 
+    nomProtocole=["UDP","TCP"]
+    nbParProtocole=[5,7]
+
     req.write(baseHTML("ATS-Project","""
 <h1>Analyse</h1>
-<p>Nombre total de paquets : <b>"""+total+"""</b></p>
-<p>Nombre total d'adresses IP source differentes : <b>"""+total_ip_src+"""</b></p>
-<p>Nombre total d'adresses IP destination differentes : <b>"""+total_ip_dst+"""</b></p>
-<p>Nombre total de ports source differents : <b>"""+total_port_src+"""</b></p>
-<p>Nombre total de ports destination differents : <b>"""+total_port_dst+"""</b></p>
+<ul>
+<li>Nombre total de paquets : <b>"""+total+"""</b></li>
+<li>Nombre total d'adresses IP source differentes : <b>"""+total_ip_src+"""</b></li>
+<li>Nombre total d'adresses IP destination differentes : <b>"""+total_ip_dst+"""</b></li>
+<li>Nombre total de ports source differents : <b>"""+total_port_src+"""</b></li>
+<li>Nombre total de ports destination differents : <b>"""+total_port_dst+"""</b></li>
+</ul>
+<canvas id="protocole" width="20vh" height="40vw"></canvas>
+<script src="/Chart.js"></script>
+<script src="/pie.js"></script>
 """
 ))
