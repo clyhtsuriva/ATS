@@ -43,7 +43,7 @@ def index(req):
 <h1>ATS-Project</h1>
 <div id="tip" style="display:block;">
 Pour voir le nombre de paquets en destination d'une adresse IP, cliquez sur cette dernière dans le tableau.<div id="ok" onclick="toggle_div(this,'tip');"><b>OK</b></div></div>
-<p>Nombre totale de paquets : <b>"""+ count +"""</b></p>
+<p>Nombre total de paquets : <b>"""+ count +"""</b></p>
 <em><div id="ici" onclick="affiche_tas()">Pour afficher toute la table, cliquez sur ce texte.</div></em><br/>
 <div id="tab">
 <table class="data_tab">
