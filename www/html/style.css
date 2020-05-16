@@ -51,3 +51,19 @@ em{
 li{
 	color:#FFFFFF;
 }
+
+
+#afficheTas{    
+        background-color: #262626;
+        border: solid thin #FF00FF;
+        color: #FF00FF;
+        cursor: pointer;
+}
+
+
+#ok{
+	background-color: #262626;
+	border: solid #6666FF;
+	color: #D42471;
+	cursor: pointer;
+}
