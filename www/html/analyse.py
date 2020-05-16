@@ -37,9 +37,6 @@ def index(req):
 
 #write the html page
 
-    nomProtocole=["UDP","TCP"]
-    nbParProtocole=[5,7]
-
     req.write(baseHTML("ATS-Project","""
 <h1>Analyse</h1>
 <ul>
