@@ -61,43 +61,43 @@ LirePortDSTUDP.close()
 
 
 #print "Heure TCP:"
-a = str(DerniereLigneHeureTCP[-1])
+HeureTCP = str(DerniereLigneHeureTCP[-1])
 
 #print "Protocole TCP:"
-b = str(DerniereLigneProtocoleTCP[-1])
+ProtocoleTCP = str(DerniereLigneProtocoleTCP[-1])
 
 #print "IP Source TCP:"
-c = str(DerniereLigneIPSRCTCP[-1])
+IPsrcTCP = str(DerniereLigneIPSRCTCP[-1])
 
 #print "Port Source TCP:"
-d = str(DerniereLignePortSRCTCP[-1])
+PortsrcTCP = str(DerniereLignePortSRCTCP[-1])
 
 #print "IP Destination TCP:"
-e = str(DerniereLigneIPDSTTCP[-1])
+IPdstTCP = str(DerniereLigneIPDSTTCP[-1])
 
 #print "Port Destination TCP:"
-f = str(DerniereLignePortDSTTCP[-1])
+PortdstTCP = str(DerniereLignePortDSTTCP[-1])
 
 
 #Re coucou
 
 #print "Heure UDP:"
-z = str(DerniereLigneHeureUDP[-1])
+HeureUDP = str(DerniereLigneHeureUDP[-1])
 
 #print "Protocole UDP:"
-y = str(DerniereLigneProtocoleUDP[-1])
+ProtocoleUDP = str(DerniereLigneProtocoleUDP[-1])
 
 #print "IP Source UDP:"
-x = str(DerniereLigneIPSRCUDP[-1])
+IPsrcUDP = str(DerniereLigneIPSRCUDP[-1])
 
 #print "Port Source UDP:"
-w = str(DerniereLignePortSRCUDP[-1])
+PortsrcUDP = str(DerniereLignePortSRCUDP[-1])
 
 #print "IP Destination UDP:"
-v = str(DerniereLigneIPDSTUDP[-1])
+IPdstUDP = str(DerniereLigneIPDSTUDP[-1])
 
 #print "Port Destination UDP:"
-u = str(DerniereLignePortDSTUDP[-1])
+PortdstUDP = str(DerniereLignePortDSTUDP[-1])
 
 
 def connexionBD():
@@ -113,9 +113,9 @@ cur=conn.cursor()
 #""".format(a,b,c,e,d,f,z,y,x,v,w,u)
 
 cur.execute("INSERT INTO paquet (heure,protocole,ip_source,ip_destination,port_source,port_destination) VALUES (%s, %s, %s, %s, %s, %s)",
-        (a, b, c, e, d, f))
+        (HeureTCP, 'TCP', IPsrcTCP, IPdstTCP, PortsrcTCP, PortdstTCP))
 cur.execute("INSERT INTO paquet (heure,protocole,ip_source,ip_destination,port_source,port_destination) VALUES (%s, %s, %s, %s, %s, %s)",
-        (z, y, x, v, w, u))
+        (HeureUDP, 'UDP', IPsrcUDP, IPdstUDP, PortsrcUDP, PortdstUDP))
 
 #cur.execute(sql)
 
