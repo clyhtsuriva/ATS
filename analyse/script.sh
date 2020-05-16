@@ -1,6 +1,7 @@
 #!/bin/bash
 # coding: utf-8
 
+#TO-DO:
 
 #sudo tcpdump -i wlp2s0 -c1 -v -w temp.pcap
 #b=$(sudo tcpdump -r temp.pcap > tempcat)
@@ -17,10 +18,14 @@
 #	echo 'KC'
 #fi
 
+sudo ifconfig
+echo "Indiquez votre interface : "
+read Interface
+
 while :
 do
 
-	sudo tcpdump -i wlp2s0 -c1 -nn tcp -w capturetcp.pcap
+	sudo tcpdump -i $Interface -c1 -nn tcp -w capturetcp.pcap
 	sudo tcpdump -nn -r capturetcp.pcap > grostastcp
 	echo -e "Voici un paquet TCP\n"
 	cat grostastcp | cut -d" " -f1 >> /tmp/heuretcp.txt
@@ -44,7 +49,7 @@ do
 
 # Attention ici c'est UDP
 
-	sudo tcpdump -i wlp2s0 -c1 -nn udp -w captureudp.pcap
+	sudo tcpdump -i $Interface -c1 -nn udp -w captureudp.pcap
 	sudo tcpdump -nn -r captureudp.pcap > grostasudp
 	echo -e "Voici un paquet UDP\n" 
 	cat grostasudp | cut -d" " -f1 >> /tmp/heureudp.txt
