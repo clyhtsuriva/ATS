@@ -26,14 +26,14 @@ def index(req):
     conn=connexionBD()
     cur=conn.cursor()
 
-    sql="select * from paquet where ip_destination='{}' ORDER BY heure DESC;".format(ip)
-    sql_count="select count(*) from paquet where ip_destination='{}';".format(ip)
+    sql="SELECT * FROM paquet WHERE ip_destination=%s ORDER BY heure DESC"
+    sql_count="SELECT COUNT(*) FROM paquet WHERE ip_destination=%s"
 
-    cur.execute(sql)
+    cur.execute(sql, (ip, ))
     conn.commit()
     data=cur.fetchall()
 
-    cur.execute(sql_count)
+    cur.execute(sql_count, (ip, ))
     conn.commit()
     count=cur.fetchone()
 
@@ -55,10 +55,12 @@ def index(req):
     req.write(baseHTML(ip,"""
 <h1>IP Destination : """ + ip + """</h1>
 <p>Nombre de paquets en destination de """+ ip + """ : <b>"""+ str(count[0])+ """</b></p>
+<div id="tab">
 <table class="data_tab">
 <tr><th>Heure</th><th>Protocole</th><th>IP Source</th><th>IP Destination</th><th>Port Source</th><th>Port Destination</th></tr>
 """
 + content + 
 """
 </table>
+</div>
 """))

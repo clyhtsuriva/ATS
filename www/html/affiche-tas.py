@@ -11,7 +11,7 @@ def index(req):
     conn=connexionBD()
     cur=conn.cursor()
 
-    sql="SELECT * FROM paquet ORDER BY heure DESC;"
+    sql="SELECT * FROM paquet ORDER BY heure DESC"
 
     cur.execute(sql)
     conn.commit()
