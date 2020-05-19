@@ -2,8 +2,8 @@
 
 apt install tcpdump
 
-./ATS-Project/automatisation/BDDAuto.sh
+./ATS/automatisation/BDDAuto.sh
 
-./ATS-Project/automatisation/apacheAuto.sh
+./ATS/automatisation/apacheAuto.sh
 
-./ATS-Project/analyse/script.sh
+./ATS/analyse/script.sh

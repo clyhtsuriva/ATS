@@ -2,7 +2,7 @@
 #cloner dans le repertoire personnel du root
 #executer en tant que root
 
-cp /root/ATS-Project/www/html/init-bd.sql /tmp/table.sql #Car problème de droit root
+cp /root/ATS/www/html/init-bd.sql /tmp/table.sql #Car problème de droit root
 
 apt install postgresql
 
