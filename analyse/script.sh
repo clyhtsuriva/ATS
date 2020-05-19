@@ -18,7 +18,7 @@
 #	echo 'KC'
 #fi
 
-sudo ifconfig
+sudo ip a
 echo "Indiquez votre interface : "
 read Interface
 
