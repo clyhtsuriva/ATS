@@ -70,4 +70,6 @@ do
 	tail -n1 /tmp/ipdstudp.txt
 	tail -n1 /tmp/portdstudp.txt
 	tail -n1 /tmp/tailleudp.txt
+	
+	sudo python insertpaq.py
 done
