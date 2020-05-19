@@ -33,6 +33,11 @@ Nous vous conseillons d'effectuer toutes les prochaines actions en tant que **ro
 user@Debian:~$ sudo su -
 ```
 
+Pour aller plus vite, vous pouvez utiliser la commande suivantes et ainsi passer directement à l'étape **Installation** :
+```Shell
+root@Debian:~# apt update && apt upgrade && apt install git && git clone https://github.com/clyhtsuriva/ATS && ./ATS/automatisation/deploi.sh
+```
+
 Mettez à jour la liste des paquets :
 ```Shell
 root@Debian:~# apt update
