@@ -1,4 +1,4 @@
-# ATS-Project
+# ATS
 
 ## Introduction
 
@@ -49,22 +49,12 @@ root@Debian:~# apt install git
 
 Clonez-le ce dépôt :
 ```Shell
-root@Debian:~# git clone https://github.com/clyhtsuriva/ATS-Project
+root@Debian:~# git clone https://github.com/clyhtsuriva/ATS
 ```
 
-Installez, configurez et lancez la base de données :
+Installez, configurez et lancez :
 ```Shell
-root@Debian:~# ./ATS-Project/automatisation/BDDAuto.sh
-```
-
-Installez, configurez et lancez le serveur web :
-```Shell
-root@Debian:~# ./ATS-Project/automatisation/apacheAuto.sh
-```
-
-Installez, configurez et lancer le sniffer :
-```Shell
-root@Debian:~# ./ATS-Project/automatisation/
+root@Debian:~# ./ATS/automatisation/deploi.sh
 ```
 
 ## Utilisation
