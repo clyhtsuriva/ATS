@@ -6,7 +6,8 @@ from fonctions import baseHTML, connexionBD, lien
 
 def index(req):
     req.content_type="text/html"
-    content=str()
+    ipdst=str()
+    portdst=str()
 
 #sql part    
     conn=connexionBD()
@@ -39,17 +40,27 @@ def index(req):
     cur.execute("SELECT ip_destination, COUNT(ip_destination) FROM paquet GROUP BY ip_destination")
     conn.commit()
     each_ip_dest=cur.fetchall()
+#
+    cur.execute("SELECT port_destination, COUNT(port_destination) FROM paquet GROUP BY port_destination")
+    conn.commit()
+    each_port_dest=cur.fetchall()
 ###
     conn.close()
 #sql part
 
-#loop
+#loops
     for i in each_ip_dest :
-        content+=("""<tr>
+        ipdst+=("""<tr>
 <td>""" + str(i[0]) + """</td>
 <td>""" + str(i[1]) + """</td>
                 </tr>""")
-#loop
+
+    for i in each_port_dest :
+        portdst+=("""<tr>   
+<td>""" + str(i[0]) + """</td>
+<td>""" + str(i[1]) + """</td>
+                </tr>""")
+#loops
 
 #write the html page
 
@@ -66,7 +77,9 @@ def index(req):
 <br/>
 <table>
 <tr><th>IP destination</th><th>Recurrence</th></tr>
-"""+str(content)+"""
+"""+str(ipdst)+"""
+<tr><th>Port destination</th><th>Reccurrence</th></tr>
+"""+str(portdst)+"""
 </table>
 <canvas id="protocole" width="20vh" height="40vw"></canvas>
 <script src="/Chart.js"></script>
