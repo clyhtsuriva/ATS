@@ -80,3 +80,11 @@ th{
 	background-color:#D42471;
 	color:#000000;
 }
+
+.inlineTable{
+	display: inline-table;
+}
+
+.floatTable{
+	float: left;
+}

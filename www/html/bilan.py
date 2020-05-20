@@ -37,7 +37,7 @@ def index(req):
     conn.commit()
     total_uneheure=str(cur.fetchone()[0])
 #
-    cur.execute("SELECT ip_destination, COUNT(ip_destination) FROM paquet GROUP BY ip_destination")
+    cur.execute("SELECT ip_destination, COUNT(ip_destination) FROM paquet GROUP BY ip_destination DESC")
     conn.commit()
     each_ip_dest=cur.fetchall()
 #
@@ -75,9 +75,11 @@ def index(req):
 <li>Nombre total de ports destination differents : <b>"""+total_port_dst+"""</b></li>
 </ul>
 <br/>
-<table>
+<table class="inlineTable">
 <tr><th>IP destination</th><th>Recurrence</th></tr>
 """+str(ipdst)+"""
+</table>
+<table class="inlineTable">
 <tr><th>Port destination</th><th>Reccurrence</th></tr>
 """+str(portdst)+"""
 </table>
