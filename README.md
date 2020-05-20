@@ -12,7 +12,7 @@ Ce projet nous fait utiliser (entre autres) les outils suivants :
 
 Web : HTML / CSS / JS / PostgreSQL / Python / Apache2
 
-Analyse des paquets : TCP Dump/PostgreSQL/Shell
+Analyse des paquets : TCP Dump / PostgreSQL / Shell / Python
 
 Automatisation du déploiement : Shell
 
@@ -33,10 +33,12 @@ Nous vous conseillons d'effectuer toutes les prochaines actions en tant que **ro
 user@Debian:~$ sudo su -
 ```
 
-Pour aller plus vite, vous pouvez utiliser la commande suivantes et ainsi passer directement à l'étape **Installation** :
+Pour aller plus vite, vous pouvez utiliser la commande suivantes et ainsi passer directement à l'étape **Utilisation** :
 ```Shell
 root@Debian:~# apt update && apt upgrade && apt install git && git clone https://github.com/clyhtsuriva/ATS && ./ATS/automatisation/deploi.sh
 ```
+***Cette commande peux prendre un certain en fonction de votre connexion internet et de votre ordinateur.***
+
 
 Mettez à jour la liste des paquets :
 ```Shell
@@ -52,7 +54,7 @@ Installez git, si ce n'est pas déjà fait :
 root@Debian:~# apt install git
 ```
 
-Clonez-le ce dépôt :
+Clonez ce dépôt :
 ```Shell
 root@Debian:~# git clone https://github.com/clyhtsuriva/ATS
 ```
@@ -64,15 +66,16 @@ root@Debian:~# ./ATS/automatisation/deploi.sh
 
 ## Utilisation
 
-A ce point, tout est censé être configuré pour une utilisation optimale.
+À ce point, tout est censé être configuré pour une utilisation optimale.
 Vous pouvez maintenant vous connecter sur l'interface web pour voir ce que le sniffer a déjà capté.
-Cela est faisable via n'importe quel navigateur web et en tapant **localhost**.
+Cela est faisable via n'importe quel navigateur web et en tapant **localhost** dans la barre de recherche.
 
 Par défaut, SSL est activé avec un certificat autosigné pour localhost. Vous arriverez donc sur la page suivante :
 ![Warning: Potential Security Risk Ahead](https://i.imgur.com/EJlqDlV.png)
+
 Il suffira alors d'accepter les risques liés à cette connexion pour accéder au site.
 
-Vient, alors, la phase d'authentification :
+Ensuite, la phase d'authentification :
 ![Authentication Required](https://i.imgur.com/0lC1BmH.png)
 
 Le login et le mot de passe sont **admin** par défaut. Vous pouvez bien sûr changer cela en modifiant le fichier concerné :
