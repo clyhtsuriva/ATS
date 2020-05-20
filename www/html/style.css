@@ -67,3 +67,16 @@ li{
 	color: #D42471;
 	cursor: pointer;
 }
+
+tr:nth-child(even){
+	background-color:#333333
+}
+
+tr:nth-child(odd){
+        background-color:#0d0d0d
+}
+
+th{
+	background-color:#D42471;
+	color:#000000;
+}
