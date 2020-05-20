@@ -68,7 +68,14 @@ A ce point, tout est censé être configuré pour une utilisation optimale.
 Vous pouvez maintenant vous connecter sur l'interface web pour voir ce que le sniffer a déjà capté.
 Cela est faisable via n'importe quel navigateur web et en tapant **localhost**.
 
-Le nom d'utilisateur et le mot de passe sont **admin** par défaut. Vous pouvez biensur changez cela en modifiant le fichier concerné :
+Par défaut, SSL est activé avec un certificat autosigné pour localhost. Vous arriverez donc sur la page suivante :
+![Warning: Potential Security Risk Ahead](https://i.imgur.com/EJlqDlV.png)
+Il suffira alors d'accepter les risques liés à cette connexion pour accéder au site.
+
+Vient, alors, la phase d'authentification :
+![Authentication Required](https://i.imgur.com/0lC1BmH.png)
+
+Le login et le mot de passe sont **admin** par défaut. Vous pouvez bien sûr changer cela en modifiant le fichier concerné :
 ```Shell
 root@Debian:~# editor /var/www/.htpasswd
 ```
