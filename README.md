@@ -33,11 +33,11 @@ Nous vous conseillons d'effectuer toutes les prochaines actions en tant que **ro
 user@Debian:~$ sudo su -
 ```
 
-Pour aller plus vite, vous pouvez utiliser la commande suivantes et ainsi passer directement à l'étape **Utilisation** :
+Pour aller plus vite, vous pouvez utiliser la commande suivante et ainsi passer directement à l'étape **Utilisation** :
 ```Shell
 root@Debian:~# apt update && apt upgrade && apt install git && git clone https://github.com/clyhtsuriva/ATS && ./ATS/automatisation/deploi.sh
 ```
-***Cette commande peux prendre un certain en fonction de votre connexion internet et de votre ordinateur.***
+***Cette commande peut prendre un certain en fonction de votre connexion internet et de votre ordinateur.***
 
 
 Mettez à jour la liste des paquets :
@@ -84,3 +84,16 @@ root@Debian:~# editor /var/www/.htpasswd
 ```
 
 La syntaxe pour utiliser le filtre est donnée sur la page **syntaxe**.
+
+**Le reste est assez intuitif.**
+La page d'**accueil** contient les 20 derniers paquets enregistrés dans la bdd avec la possibilité de tout affichés.
+
+***Attention, cela peut être très lent s’il y a énormément de paquets réceptionnés.***
+
+Vous avez aussi la possibilité de visualiser uniquement les paquets qui concerne un champ en cliquant dessus.
+
+La page **filtrage** permet d'effectuer un peu plus manuellement une requête SQL, voir **syntaxe**.
+
+***Page qui sera surement enlevée dans le futur à cause de l'injection SQL***
+
+Enfin, on a la page **bilan**. On y trouve les informations "statistiques".
