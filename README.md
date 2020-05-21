@@ -20,7 +20,7 @@ Editeurs : Neovim / Nano
 
 OS : Debian 10
 
-Outils de présentation : PowerPoint / Google Slides
+Outils de présentation : Google Slides
 
 Outils de gestion : Gantt Project / GitHub
 
