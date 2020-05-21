@@ -37,7 +37,7 @@ Pour aller plus vite, vous pouvez utiliser la commande suivante et ainsi passer 
 ```Shell
 root@Debian:~# apt update && apt upgrade && apt install git && git clone https://github.com/clyhtsuriva/ATS && ./ATS/automatisation/deploi.sh
 ```
-***Cette commande peut prendre un certain en fonction de votre connexion internet et de votre ordinateur.***
+***Cette commande peut prendre un certain temps en fonction de votre connexion internet et de votre ordinateur.***
 
 
 Mettez à jour la liste des paquets :
