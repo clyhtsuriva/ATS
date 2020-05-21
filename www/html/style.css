@@ -85,6 +85,7 @@ th{
 	display: inline-table;
 }
 
-.floatTable{
-	float: left;
+#bilan_tab{
+	width: 60%;
+	margin: 0 auto;
 }

@@ -9,7 +9,7 @@ def index(req):
     content=str()
 
 #write the html page
-    req.write(baseHTML("ATS-Project","""
+    req.write(baseHTML("ATS - Syntaxe","""
 <h1>Syntaxe</h1>
 <p>La """+lien('syntaxe.py','syntaxe')+""" pour utiliser les filtres disponibles sur la page """+lien('filtrage.py','filtrage')+""" est la suivante :</p>
 <p>&lt;colonne&gt;='&lt;valeur&gt;'</p><br/>

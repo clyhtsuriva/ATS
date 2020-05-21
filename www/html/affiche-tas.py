@@ -18,15 +18,15 @@ def index(req):
     data=cur.fetchall()
 
     conn.close()
-
-    for i in data:
+    
+    for i in data :
         content+=("""<tr>""" +
 """<td>""" + str(i[1]) + """</td>""" +
 """<td>""" + str(i[2]) + """</td>""" +
-"""<td>""" + str(i[3]) + """</td>""" +
-"""<td>""" + lien('destination.py?ip=' + str(i[4]), str(i[4])) + """</td>""" +
-"""<td>""" + str(i[5]) + """</td>""" +
-"""<td>""" + str(i[6]) + """</td>""" +
+"""<td>""" + lien('ip_source.py?ip=' + str(i[3]), str(i[3])) + """</td>""" +
+"""<td>""" + lien('ip_destination.py?ip=' + str(i[4]), str(i[4])) + """</td>""" +
+"""<td>""" + lien('port_source.py?port=' + str(i[5]), str(i[5])) + """</td>""" +
+"""<td>""" + lien('port_destination.py?port=' + str(i[6]), str(i[6])) + """</td>""" +
 """</tr>""")
 
     req.write("""

@@ -6,23 +6,35 @@ from fonctions import baseHTML, connexionBD, lien
 
 def index(req):
     req.content_type="text/html"
+   
+#check si ip est bien la
+    try:
+        port=req.form["port"]
+    except KeyError:
+        mod_python.util.redirect(req, "index.py")
+
+#check si port a le bon format
+    try:
+        float(port)
+    except ValueError:
+        mod_python.util.redirect(req, "index.py")
+
     content=str()
 
 #sql part    
     conn=connexionBD()
     cur=conn.cursor()
 
-    sql="SELECT * FROM paquet ORDER BY heure DESC LIMIT 20;"
-    sql_count="SELECT COUNT(*) FROM paquet;"
+    sql="SELECT * FROM paquet WHERE port_source=%s ORDER BY heure DESC"
+    sql_count="SELECT COUNT(*) FROM paquet WHERE port_source=%s"
 
-    cur.execute(sql)
+    cur.execute(sql, (port, ))
     conn.commit()
     data=cur.fetchall()
 
-    cur.execute(sql_count)
+    cur.execute(sql_count, (port, ))
     conn.commit()
     count=cur.fetchone()
-    count=str(count[0])
 
     conn.close()
 #sql part
@@ -34,18 +46,16 @@ def index(req):
 """<td>""" + str(i[2]) + """</td>""" +
 """<td>""" + lien('ip_source.py?ip=' + str(i[3]), str(i[3])) + """</td>""" +
 """<td>""" + lien('ip_destination.py?ip=' + str(i[4]), str(i[4])) + """</td>""" +
-"""<td>""" + lien('port_source.py?port=' + str(i[5]), str(i[5])) + """</td>""" +
-"""<td>""" + lien('port_destination.py?port=' + str(i[6]), str(i[6])) + """</td>""" +
+"""<td>""" + lien('port_source.py?port=' + str(i[5]), str(i[5]) ) + """</td>""" +
+"""<td>""" + lien('port_destination.py?port=' + str(i[6]), str(i[6]) )+ """</td>""" +
 """</tr>""")
-
+    
 #write the html page
-    req.write(baseHTML("ATS - Accueil","""
-<h1>ATS</h1>
+    req.write(baseHTML("ATS - " + port,"""
+<h1>Port source : """ + port + """</h1>
 <div id="tip" style="display:block;">
 Afin de voir le reverse DNS d'une adresse IP, cliquez sur cette dernière dans le tableau <button id="ok" onclick="toggle_div(this,'tip');">OK</button></div>
-<p>Nombre total de paquets : <b>"""+ count +"""</b></p>
-<em>Pour afficher toute la table, cliquez</em>
-<button id="afficheTas" onclick="affiche_tas()">ICI</button><br/>
+<p>Nombre de paquets venant de """+ port + """ : <b>"""+ str(count[0])+ """</b></p>
 <div id="tab">
 <table class="data_tab">
 <tr><th>Heure</th><th>Protocole</th><th>IP Source</th><th>IP Destination</th><th>Port Source</th><th>Port Destination</th></tr>
@@ -55,5 +65,4 @@ Afin de voir le reverse DNS d'une adresse IP, cliquez sur cette dernière dans l
 </table>
 </div>
 <script src="tip.js"></script>
-<script src="tas.js"></script>
 """))

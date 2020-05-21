@@ -12,7 +12,7 @@ def baseHTML(title,body):
         </head>
         <body>
             <nav>
-                <a href="/">Index</a>
+                <a href="/">Accueil</a>
                 <a href="/filtrage.py">Filtrage</a>
                 <a href="/syntaxe.py">Syntaxe</a>
                 <a href="/bilan.py">Bilan</a>

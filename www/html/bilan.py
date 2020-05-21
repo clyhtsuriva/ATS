@@ -48,16 +48,36 @@ def index(req):
         for k in suff:
             nom="each_"+j+"_"+k
             for i in globals()[nom]:
-                globals()[j+k]+=("""<tr>
-<td>""" + str(i[0]) + """</td>
+                if j=="ip" and k=="dst":
+                    globals()[j+k]+=("""<tr>
+<td>""" +lien('ip_destination.py?ip='+str(i[0]), str(i[0]) )+ """</td>
 <td>""" + str(i[1]) + """</td>
-                    </tr>""")
+                        </tr>""")
+                
+                elif j=="port" and k=="dst":
+                    globals()[j+k]+=("""<tr>
+<td>""" +lien('port_destination.py?port='+str(i[0]), str(i[0]) )+ """</td>
+<td>""" + str(i[1]) + """</td>
+                        </tr>""")
 
+                elif j=="ip" and k=="src":
+                    globals()[j+k]+=("""<tr>
+<td>""" + lien('ip_source.py?ip='+str(i[0]), str(i[0]) ) + """</td>
+<td>""" + str(i[1]) + """</td>
+                        </tr>""")
+
+                else:
+                    globals()[j+k]+=("""<tr>
+<td>""" + lien('port_source.py?port='+str(i[0]), str(i[0]) ) + """</td>
+<td>""" + str(i[1]) + """</td>
+                        </tr>""")
 
 #write the html page
 
-    req.write(baseHTML("ATS-Project","""
+    req.write(baseHTML("ATS - Bilan","""
 <h1>Bilan</h1>
+<div id="tip" style="display:block;">
+Afin de voir le reverse DNS d'une adresse IP, cliquez sur cette dernière dans le tableau <button id="ok" onclick="toggle_div(this,'tip');">OK</button></div>
 <ul>
 <li>Nombre total de paquets : <b>"""+total+"""</b></li>
 <li>Nombre total de paquets depuis 1h : <b>"""+total_uneheure+"""</b></li>
@@ -66,7 +86,7 @@ def index(req):
 <li>Nombre total de ports source differents : <b>"""+total_port_src+"""</b></li>
 <li>Nombre total de ports destination differents : <b>"""+total_port_dst+"""</b></li>
 </ul>
-<br/>
+<div id="bilan_tab">
 <table class="inlineTable">
 <tr><th>IP destination</th><th>Recurrence</th></tr>
 """+str(ipdst)+"""
@@ -83,8 +103,7 @@ def index(req):
 <tr><th>Port source</th><th>Reccurrence</th></tr>
 """+str(portsrc)+"""
 </table>
-<canvas id="protocole" width="20vh" height="40vw"></canvas>
-<script src="/Chart.js"></script>
-<script src="/pie.js"></script>
+</div>
+<script src="tip.js"></script>
 """
 ))
