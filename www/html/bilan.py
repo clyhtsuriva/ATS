@@ -88,19 +88,19 @@ Afin de voir le reverse DNS d'une adresse IP, cliquez sur cette dernière dans l
 </ul>
 <div id="bilan_tab">
 <table class="inlineTable">
-<tr><th>IP destination</th><th>Recurrence</th></tr>
+<tr><th>IP destination</th><th>Récurrence</th></tr>
 """+str(ipdst)+"""
 </table>
 <table class="inlineTable">
-<tr><th>Port destination</th><th>Reccurrence</th></tr>
+<tr><th>Port destination</th><th>Récurrence</th></tr>
 """+str(portdst)+"""
 </table>
 <table class="inlineTable">
-<tr><th>IP source</th><th>Reccurrence</th></tr>
+<tr><th>IP source</th><th>Récurrence</th></tr>
 """+str(ipsrc)+"""
 </table>
 <table class="inlineTable">
-<tr><th>Port source</th><th>Reccurrence</th></tr>
+<tr><th>Port source</th><th>Récurrence</th></tr>
 """+str(portsrc)+"""
 </table>
 </div>
