@@ -33,6 +33,13 @@ Nous vous conseillons d'effectuer toutes les prochaines actions en tant que **ro
 user@Debian:~$ sudo su -
 ```
 
+Mettez votre interface wifi en mode monitor :
+```Shell
+root@Debian:~# ifconfig [InterfaceEth] down
+root@Debian:~# iwconfig [InterfaceEth] wlandev [InterfaceWifi] wlanmode monitor
+root@Debian:~# ifconfig [InterfaceEth] up
+```
+
 Pour aller plus vite, vous pouvez utiliser la commande suivante et ainsi passer directement à l'étape **Utilisation** :
 ```Shell
 root@Debian:~# apt update && apt upgrade && apt install git && git clone https://github.com/clyhtsuriva/ATS && ./ATS/automatisation/deploi.sh
